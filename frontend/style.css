@@ -1,0 +1,246 @@
+/* 1. Global Styles & Typography */
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    margin: 0;
+    padding: 20px; /* Add some padding to the body itself */
+    background-color: #f4f7f6; /* Very light gray background */
+    color: #333;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+/* Default link styling (if any were added) */
+a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* 2. Main Container/Layout */
+header { /* Assuming header is outside main for global title */
+    width: 100%;
+    max-width: 960px; /* Match main's max-width */
+    margin: 0 auto 20px auto; /* Center header text if needed */
+    text-align: center;
+}
+
+main {
+    width: 100%;
+    max-width: 960px; /* Or 1100px */
+    margin: 0 auto; /* Centered */
+    padding: 20px; /* More padding around the main content container */
+    /* background-color: #fff; Removed, as sections will be cards */
+    /* border-radius: 8px; Removed */
+    /* box-shadow: 0 0 10px rgba(0,0,0,0.1); Removed */
+}
+
+h1 {
+    color: #2c3e50;
+    margin-bottom: 30px;
+    font-size: 2.5em; /* Larger H1 */
+}
+
+h2 {
+    color: #34495e;
+    margin-top: 0; /* Reset margin for card header */
+    margin-bottom: 20px; /* Space below h2 in card */
+    font-size: 1.8em;
+    border-bottom: 2px solid #e0e0e0; /* Subtle border for h2 */
+    padding-bottom: 10px;
+}
+
+/* 3. Section Styling (Card-like design) */
+section {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 25px; /* Increased padding for cards */
+    margin-bottom: 30px; /* Increased margin between cards */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* Slightly more pronounced shadow */
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+section:hover {
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+}
+
+
+/* 4. Form Enhancements (#transaction-form) */
+#transaction-form div {
+    margin-bottom: 18px; /* Spacing between form elements */
+}
+
+#transaction-form label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 600; /* Slightly bolder labels */
+    color: #555;
+}
+
+#transaction-form input[type="text"],
+#transaction-form input[type="date"],
+#transaction-form input[type="number"],
+#transaction-form select {
+    width: 100%;
+    padding: 12px; /* Increased padding */
+    margin-bottom: 0; /* Remove bottom margin from input itself, div provides it */
+    border: 1px solid #d1d5db; /* Lighter border */
+    border-radius: 6px; /* More rounded */
+    font-size: 1em;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+#transaction-form input[type="text"]:focus,
+#transaction-form input[type="date"]:focus,
+#transaction-form input[type="number"]:focus,
+#transaction-form select:focus {
+    outline: none;
+    border-color: #007bff; /* Primary color border */
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25); /* Subtle focus shadow */
+}
+
+#transaction-form button[type="submit"] {
+    background-color: #007bff; /* Primary blue */
+    color: white;
+    padding: 12px 20px; /* Adjusted padding */
+    border: none;
+    border-radius: 6px;
+    font-size: 1.1em; /* Slightly larger font */
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+#transaction-form button[type="submit"]:hover {
+    background-color: #0056b3; /* Darker blue */
+}
+#transaction-form button[type="submit"]:active {
+    transform: translateY(1px); /* Subtle press effect */
+}
+
+
+/* 5. Table Enhancements (#transactions-table) */
+#transactions-table {
+    width: 100%;
+    border-collapse: collapse; /* Important for clean lines */
+    margin-top: 20px;
+}
+
+#transactions-table th,
+#transactions-table td {
+    padding: 12px 15px; /* Consistent padding */
+    text-align: left;
+    border-bottom: 1px solid #e0e0e0; /* Light line for rows */
+}
+
+#transactions-table th {
+    font-weight: 600; /* Bolder headers */
+    color: #333;
+    background-color: #f8f9fa; /* Very light gray for header */
+    padding-bottom: 12px; /* Ensure padding consistency */
+}
+
+#transactions-table td {
+    color: #555;
+    padding: 12px 15px; /* Ensure consistent padding for td as well */
+}
+
+#transactions-table tbody tr:last-child td {
+    border-bottom: none; /* Remove border from last row */
+}
+
+#transactions-table tbody tr:hover {
+    background-color: #f1f5f9; /* Light blueish gray hover */
+}
+
+/* 6. Summary Section (#summary-section) */
+#summary-section {
+    padding: 25px;
+}
+#summary-section h2 {
+    margin-bottom: 20px;
+}
+#summary-section p {
+    margin: 12px 0;
+    font-size: 1.15em; /* Slightly larger summary text */
+    display: flex;
+    justify-content: space-between; /* Align text and amount */
+}
+
+#summary-section p span { /* The amount part */
+    font-weight: 600; /* Bolder for amounts */
+    font-size: 1.2em; /* Larger for emphasis */
+}
+
+#total-income {
+    color: #28a745; /* Green for income */
+}
+
+#total-expenses {
+    color: #dc3545; /* Red for expenses */
+}
+
+#net-balance {
+    color: #17a2b8; /* Info blue for net balance, or choose based on positive/negative */
+    font-size: 1.3em !important; /* Even larger for net balance */
+    font-weight: 700 !important;
+}
+
+/* Action Buttons in Table */
+.edit-btn, .delete-btn {
+    padding: 6px 12px; /* Adjusted padding */
+    margin: 0 4px; /* Margin between buttons */
+    cursor: pointer;
+    border: 1px solid transparent; /* Transparent border for consistent size */
+    border-radius: 4px;
+    font-size: 0.9em;
+    font-weight: 500;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.edit-btn {
+    background-color: #ffc107; /* Amber */
+    color: #212529; /* Dark text for light background */
+    border-color: #ffc107;
+}
+
+.edit-btn:hover {
+    background-color: #e0a800; /* Darker amber */
+    border-color: #d39e00;
+}
+
+.delete-btn {
+    background-color: #dc3545; /* Red */
+    color: white;
+    border-color: #dc3545;
+}
+
+.delete-btn:hover {
+    background-color: #c82333; /* Darker red */
+    border-color: #bd2130;
+}
+
+.edit-btn:active, .delete-btn:active {
+    transform: translateY(1px);
+}
+
+
+/* Footer */
+footer {
+    width: 100%;
+    max-width: 960px;
+    margin: 30px auto 0 auto;
+    text-align: center;
+    padding: 20px 0;
+    border-top: 1px solid #e0e0e0;
+    font-size: 0.9em;
+    color: #777;
+}

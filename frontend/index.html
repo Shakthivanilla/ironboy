@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Money Manager</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Money Management App (INR)</h1>
+    </header>
+
+    <main>
+        <section id="summary-section">
+            <h2>Summary</h2>
+            <p>Total Income: ₹<span id="total-income">0.00</span></p>
+            <p>Total Expenses: ₹<span id="total-expenses">0.00</span></p>
+            <p>Net Balance: ₹<span id="net-balance">0.00</span></p>
+        </section>
+
+        <section id="add-transaction-section">
+            <h2>Add New Transaction</h2>
+            <form id="transaction-form">
+                <div>
+                    <label for="date">Date:</label>
+                    <input type="date" id="date" name="date" required>
+                </div>
+                <div>
+                    <label for="description">Description:</label>
+                    <input type="text" id="description" name="description" placeholder="e.g., Salary, Groceries" required>
+                </div>
+                <div>
+                    <label for="amount">Amount (INR):</label>
+                    <input type="number" id="amount" name="amount" placeholder="Amount" step="0.01" min="0.01" required>
+                </div>
+                <div>
+                    <label for="type">Type:</label>
+                    <select id="type" name="type" required>
+                        <option value="income">Income</option>
+                        <option value="expense">Expense</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="category">Category:</label>
+                    <select id="category" name="category" required>
+                        <!-- Categories will be populated by JavaScript -->
+                        <option value="">Loading categories...</option>
+                    </select>
+                </div>
+                <button type="submit">Add Transaction</button>
+            </form>
+        </section>
+
+        <section id="transactions-list-section">
+            <h2>Transactions</h2>
+            <table id="transactions-table">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Description</th>
+                        <th>Category</th>
+                        <th>Type</th>
+                        <th>Amount (INR)</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="transactions-tbody">
+                    <!-- Transaction rows will be inserted by JavaScript -->
+                    <tr>
+                        <td colspan="6" style="text-align:center;">No transactions yet.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Money Manager</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

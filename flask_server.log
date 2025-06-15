@@ -1,0 +1,21 @@
+Database and tables seem to be in place.
+Initializing defaults for Flask app...
+Categories already exist, skipping default additions.
+ * Serving Flask app 'app'
+ * Debug mode: on
+WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.0.2:5000
+Press CTRL+C to quit
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 636-791-920
+127.0.0.1 - - [15/Jun/2025 07:20:43] "POST /categories HTTP/1.1" 201 -
+127.0.0.1 - - [15/Jun/2025 07:20:43] "GET /categories HTTP/1.1" 200 -
+127.0.0.1 - - [15/Jun/2025 07:20:43] "POST /transactions HTTP/1.1" 201 -
+127.0.0.1 - - [15/Jun/2025 07:20:43] "POST /transactions HTTP/1.1" 201 -
+127.0.0.1 - - [15/Jun/2025 07:20:44] "GET /transactions HTTP/1.1" 200 -
+127.0.0.1 - - [15/Jun/2025 07:20:44] "GET /balance HTTP/1.1" 200 -
+127.0.0.1 - - [15/Jun/2025 07:20:44] "GET /transactions/type/income HTTP/1.1" 200 -
+127.0.0.1 - - [15/Jun/2025 07:20:44] "GET /transactions/category/13 HTTP/1.1" 200 -
